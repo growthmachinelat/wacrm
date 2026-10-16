@@ -3,6 +3,7 @@
 import { Suspense, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { createClient } from "@/lib/supabase/client";
 import { Button } from "@/components/ui/button";
@@ -84,14 +85,35 @@ function LoginPageInner() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-background px-4 py-8">
+      <div className="mb-6 flex items-center gap-2.5">
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-[#0f1513] border border-border/50 p-1.5 shadow-sm">
+          <Image
+            src="/logo-mark.png"
+            alt="Chatrelo logo"
+            width={28}
+            height={28}
+            className="h-7 w-7 object-contain"
+            priority
+          />
+        </div>
+        <span className="text-2xl font-bold tracking-tight text-foreground">
+          Chatrelo
+        </span>
+      </div>
       <Card className="w-full max-w-md border-border bg-card">
         <CardHeader className="items-center text-center">
-          <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
+          <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-[#0f1513] border border-border/40 p-2 overflow-hidden shadow-xs">
             {inviteToken ? (
               <UsersRound className="h-6 w-6 text-primary" />
             ) : (
-              <MessageSquare className="h-6 w-6 text-primary" />
+              <Image
+                src="/logo-mark.png"
+                alt="Chatrelo"
+                width={28}
+                height={28}
+                className="h-7 w-7 object-contain"
+              />
             )}
           </div>
           <CardTitle className="text-xl text-foreground">

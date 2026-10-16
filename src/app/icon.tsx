@@ -1,8 +1,8 @@
 import { ImageResponse } from "next/og";
 
-// Replaces the default Next.js favicon with the brand mark — Hostinger
-// violet rounded square + white chat-square glyph — matching the
-// sidebar logo in `src/components/layout/sidebar.tsx`. Next.js renders
+// Replaces the default Next.js favicon with the brand mark — Chatrelo
+// lime rounded speech bubble with dark obsidian checkmark on
+// dark obsidian (#0f1513) rounded square. Next.js renders
 // this at build time and auto-injects <link rel="icon"> into <head>.
 //
 // This route takes precedence over src/app/favicon.ico, which is the
@@ -22,7 +22,7 @@ export default function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#7c3aed", // primary (Hostinger-aligned purple)
+          background: "#0f1513", // Chatrelo obsidian
           borderRadius: 6,
         }}
       >
@@ -31,15 +31,22 @@ export default function Icon() {
           height="20"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="#ffffff"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
         >
-          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+          <path
+            d="M4 3.5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H8.5l-4.5 4v-4H4a2 2 0 0 1-2-2v-10a2 2 0 0 1 2-2z"
+            fill="#c6f02c"
+          />
+          <path
+            d="M8 11.5l3 3 5.5-5.5"
+            stroke="#0f1513"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
         </svg>
       </div>
     ),
     { ...size },
   );
 }
+

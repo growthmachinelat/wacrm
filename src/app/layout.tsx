@@ -30,8 +30,8 @@ export async function generateMetadata(): Promise<Metadata> {
 
 const metadata: Metadata = {
   title: {
-    default: "wacrm",
-    template: "%s — wacrm",
+    default: "chatrelo",
+    template: "%s — chatrelo",
   },
   robots: {
     index: false,
@@ -48,7 +48,7 @@ const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#020617",
+  themeColor: "#0f1513",
   colorScheme: "dark light",
 };
 
