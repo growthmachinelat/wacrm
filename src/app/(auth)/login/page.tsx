@@ -111,11 +111,11 @@ function LoginPageInner() {
           <CardTitle className="text-xl text-foreground">
             {inviteToken ? t('titleAccept') : t('signIn')}
           </CardTitle>
-          <CardDescription className="text-muted-foreground">
-            {inviteToken
-              ? t('descAccept')
-              : t('descWelcome')}
-          </CardDescription>
+          {inviteToken && (
+            <CardDescription className="text-muted-foreground">
+              {t('descAccept')}
+            </CardDescription>
+          )}
         </CardHeader>
         <CardContent>
           <form onSubmit={handleLogin} className="flex flex-col gap-4">
