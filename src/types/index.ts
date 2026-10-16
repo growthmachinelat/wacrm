@@ -45,6 +45,11 @@ export interface Profile {
    * `@/lib/auth/roles` rather than comparing this string directly.
    */
   account_role?: AccountRole;
+  /**
+   * True when this user has platform-level publisher privileges to
+   * provision new accounts/users (`047_publisher_role.sql`).
+   */
+  publisher?: boolean;
   created_at: string;
 }
 

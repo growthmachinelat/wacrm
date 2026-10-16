@@ -35,6 +35,7 @@ interface Profile {
   beta_features: string[];
   account_id: string | null;
   account_role: AccountRole | null;
+  publisher: boolean;
 }
 
 interface AccountSummary {
@@ -130,6 +131,8 @@ interface AuthContextValue {
   canEditSettings: boolean;
   /** True if the caller can send messages and edit operational data (agent+). */
   canSendMessages: boolean;
+  /** True if `profile?.publisher === true`. */
+  isPublisher: boolean;
 }
 
 const AuthContext = createContext<AuthContextValue | null>(null);
@@ -152,6 +155,7 @@ interface ProfileRow {
   beta_features: string[] | null;
   account_id: string | null;
   account_role: string | null;
+  publisher: boolean | null;
 }
 
 /**
@@ -192,7 +196,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         const result = await supabase
           .from("profiles")
           .select(
-            "id, full_name, email, avatar_url, role, beta_features, account_id, account_role",
+            "id, full_name, email, avatar_url, role, beta_features, account_id, account_role, publisher",
           )
           .eq("user_id", userId)
           .maybeSingle();
@@ -280,6 +284,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           beta_features: data.beta_features ?? [],
           account_id: data.account_id ?? null,
           account_role: accountRole,
+          publisher: data.publisher === true,
         });
         setAccount(accountRow);
         if (!data.account_id || !accountRole) {
@@ -410,8 +415,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       canManageMembers: role ? canManageMembersFor(role) : false,
       canEditSettings: role ? canEditSettingsFor(role) : false,
       canSendMessages: role ? canSendMessagesFor(role) : false,
+      isPublisher: profile?.publisher === true,
     };
-  }, [profile?.account_role, profile?.account_id]);
+  }, [profile?.account_role, profile?.account_id, profile?.publisher]);
 
   // Signed out is not a broken account — the shell redirects to /login
   // before anything reads this.
@@ -481,6 +487,7 @@ export function useAuth(): AuthContextValue {
       canManageMembers: false,
       canEditSettings: false,
       canSendMessages: false,
+      isPublisher: false,
     };
   }
   return ctx;

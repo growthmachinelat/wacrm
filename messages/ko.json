@@ -41,7 +41,8 @@
     "defaultAvatar": "아바타",
     "menuProfile": "프로필",
     "menuSettings": "설정",
-    "menuSignOut": "로그아웃"
+    "menuSignOut": "로그아웃",
+    "publisherUsers": "사용자 관리"
   },
   "Header": {
     "dashboard": "대시보드",
@@ -52,6 +53,7 @@
     "broadcasts": "브로드캐스트",
     "automations": "자동화",
     "settings": "설정",
+    "admin": "사용자 관리",
     "openMenu": "메뉴 열기",
     "openAccountMenu": "계정 메뉴 열기",
     "defaultUser": "사용자",
@@ -2715,5 +2717,31 @@
       "metaApiStatus": "Meta API 오류: {status}",
       "syncFailed": "템플릿을 동기화하지 못했습니다"
     }
+  },
+  "PublisherUsers": {
+    "title": "사용자 관리",
+    "description": "플랫폼 전체에서 새 계정을 생성하고 등록된 사용자를 확인합니다.",
+    "createTitle": "새 계정 만들기",
+    "createDescription": "새 사용자는 이메일 인증이 완료된 상태와 전용 워크스페이스 계정으로 생성됩니다.",
+    "fullNameLabel": "전체 이름",
+    "fullNamePlaceholder": "홍길동",
+    "emailLabel": "이메일 주소",
+    "emailPlaceholder": "user@company.com",
+    "passwordLabel": "임시 비밀번호",
+    "passwordPlaceholder": "최소 8자 이상",
+    "submit": "사용자 생성",
+    "creating": "사용자 생성 중...",
+    "createSuccess": "{email} 계정이 생성되었습니다",
+    "createError": "사용자를 생성하지 못했습니다",
+    "listTitle": "등록된 사용자",
+    "listDescription": "이 인스턴스에서 최근 생성된 계정 ({count}명).",
+    "refresh": "새로고침",
+    "loading": "사용자 불러오는 중...",
+    "empty": "사용자가 없습니다.",
+    "colUser": "사용자",
+    "colEmail": "이메일",
+    "colRole": "역할",
+    "colCreated": "생성일",
+    "publisherBadge": "Publisher"
   }
 }

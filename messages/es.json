@@ -41,7 +41,8 @@
     "defaultAvatar": "Avatar",
     "menuProfile": "Perfil",
     "menuSettings": "Configuración",
-    "menuSignOut": "Cerrar sesión"
+    "menuSignOut": "Cerrar sesión",
+    "publisherUsers": "Gestión de usuarios"
   },
   "Header": {
     "dashboard": "Panel",
@@ -52,6 +53,7 @@
     "broadcasts": "Difusiones",
     "automations": "Automatizaciones",
     "settings": "Configuración",
+    "admin": "Gestión de usuarios",
     "openMenu": "Abrir menú",
     "openAccountMenu": "Abrir menú de la cuenta",
     "defaultUser": "Usuario",
@@ -2715,5 +2717,31 @@
       "metaApiStatus": "Error de la API de Meta: {status}",
       "syncFailed": "Error al sincronizar las plantillas"
     }
+  },
+  "PublisherUsers": {
+    "title": "Gestión de usuarios",
+    "description": "Crea nuevas cuentas y consulta los usuarios registrados en la plataforma.",
+    "createTitle": "Crear nueva cuenta",
+    "createDescription": "Los nuevos usuarios se crean con su correo verificado y su propio espacio de trabajo.",
+    "fullNameLabel": "Nombre completo",
+    "fullNamePlaceholder": "María Pérez",
+    "emailLabel": "Correo electrónico",
+    "emailPlaceholder": "usuario@empresa.com",
+    "passwordLabel": "Contraseña temporal",
+    "passwordPlaceholder": "Mínimo 8 caracteres",
+    "submit": "Crear usuario",
+    "creating": "Creando usuario...",
+    "createSuccess": "Cuenta creada para {email}",
+    "createError": "No se pudo crear el usuario",
+    "listTitle": "Usuarios registrados",
+    "listDescription": "Cuentas aprovisionadas recientemente en esta instancia ({count}).",
+    "refresh": "Actualizar",
+    "loading": "Cargando usuarios...",
+    "empty": "No se encontraron usuarios.",
+    "colUser": "Usuario",
+    "colEmail": "Correo",
+    "colRole": "Rol",
+    "colCreated": "Creado",
+    "publisherBadge": "Publisher"
   }
 }

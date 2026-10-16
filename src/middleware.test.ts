@@ -112,6 +112,18 @@ describe("middleware — refreshed auth cookies survive redirects", () => {
     expect(res.headers.get("location")).toBeNull();
     expect(res.cookies.get(ROTATED.name)?.value).toBe(ROTATED.value);
   });
+
+  it("redirects /signup to /login for both signed-out and signed-in visitors", async () => {
+    mockUser = null;
+    const anonRes = await middleware(new NextRequest("https://app.test/signup"));
+    expect(anonRes.status).toBe(307);
+    expect(new URL(anonRes.headers.get("location")!).pathname).toBe("/login");
+
+    mockUser = { id: "user-1" };
+    const authedRes = await middleware(new NextRequest("https://app.test/signup"));
+    expect(authedRes.status).toBe(307);
+    expect(new URL(authedRes.headers.get("location")!).pathname).toBe("/login");
+  });
 });
 
 describe("middleware — every dashboard route requires a session", () => {

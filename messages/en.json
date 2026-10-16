@@ -41,7 +41,8 @@
     "defaultAvatar": "Avatar",
     "menuProfile": "Profile",
     "menuSettings": "Settings",
-    "menuSignOut": "Sign out"
+    "menuSignOut": "Sign out",
+    "publisherUsers": "User Management"
   },
   "Header": {
     "dashboard": "Dashboard",
@@ -52,6 +53,7 @@
     "broadcasts": "Broadcasts",
     "automations": "Automations",
     "settings": "Settings",
+    "admin": "User Management",
     "openMenu": "Open menu",
     "openAccountMenu": "Open account menu",
     "defaultUser": "User",
@@ -2715,5 +2717,31 @@
       "metaApiStatus": "Meta API error: {status}",
       "syncFailed": "Failed to sync templates"
     }
+  },
+  "PublisherUsers": {
+    "title": "User Management",
+    "description": "Provision new accounts and view registered users across the platform.",
+    "createTitle": "Create new account",
+    "createDescription": "New users are created with a verified email and their own workspace account.",
+    "fullNameLabel": "Full name",
+    "fullNamePlaceholder": "Jane Doe",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "user@company.com",
+    "passwordLabel": "Temporary password",
+    "passwordPlaceholder": "Minimum 8 characters",
+    "submit": "Create user",
+    "creating": "Creating user...",
+    "createSuccess": "Account created for {email}",
+    "createError": "Failed to create user",
+    "listTitle": "Registered users",
+    "listDescription": "Recent accounts provisioned on this instance ({count}).",
+    "refresh": "Refresh",
+    "loading": "Loading users...",
+    "empty": "No users found.",
+    "colUser": "User",
+    "colEmail": "Email",
+    "colRole": "Role",
+    "colCreated": "Created",
+    "publisherBadge": "Publisher"
   }
 }

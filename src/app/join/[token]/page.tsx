@@ -248,22 +248,6 @@ export default function JoinPage() {
               >
                 {t('tryAgain')}
               </Button>
-              <Link href="/signup">
-                <Button
-                  variant="outline"
-                  className="w-full border-border text-muted-foreground hover:bg-muted hover:text-foreground"
-                >
-                  {t('createNewAccount')}
-                </Button>
-              </Link>
-            </>
-          ) : (
-            <>
-              <Link href="/signup">
-                <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-                  {t('createNewAccount')}
-                </Button>
-              </Link>
               <Link href="/login">
                 <Button
                   variant="outline"
@@ -273,6 +257,15 @@ export default function JoinPage() {
                 </Button>
               </Link>
             </>
+          ) : (
+            <Link href="/login">
+              <Button
+                variant="outline"
+                className="w-full border-border text-muted-foreground hover:bg-muted hover:text-foreground"
+              >
+                {t('signIn')}
+              </Button>
+            </Link>
           )}
         </CardContent>
       </Card>
@@ -399,21 +392,13 @@ export default function JoinPage() {
     );
   }
 
-  // ----- Not authed: prompt to sign up or sign in -----
+  // ----- Not authed: prompt to sign in -----
   return (
     <Card className="w-full max-w-md border-border bg-card">
       {inviteHeader}
       <CardContent className="flex flex-col gap-2">
-        <Link href={`/signup?invite=${encodeURIComponent(token!)}`}>
-          <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-            {t('createAndJoin')}
-          </Button>
-        </Link>
         <Link href={`/login?invite=${encodeURIComponent(token!)}`}>
-          <Button
-            variant="outline"
-            className="w-full border-border text-muted-foreground hover:bg-muted hover:text-foreground"
-          >
+          <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
             {t('haveAccount')}
           </Button>
         </Link>

@@ -41,7 +41,8 @@
     "defaultAvatar": "Avatar",
     "menuProfile": "Perfil",
     "menuSettings": "Configurações",
-    "menuSignOut": "Sair"
+    "menuSignOut": "Sair",
+    "publisherUsers": "Gestão de usuários"
   },
   "Header": {
     "dashboard": "Painel",
@@ -52,6 +53,7 @@
     "broadcasts": "Disparos",
     "automations": "Automações",
     "settings": "Configurações",
+    "admin": "Gestão de usuários",
     "openMenu": "Abrir menu",
     "openAccountMenu": "Abrir menu da conta",
     "defaultUser": "Usuário",
@@ -2715,5 +2717,31 @@
       "metaApiStatus": "Erro da API da Meta: {status}",
       "syncFailed": "Falha ao sincronizar os modelos"
     }
+  },
+  "PublisherUsers": {
+    "title": "Gestão de usuários",
+    "description": "Provisione novas contas e veja os usuários registrados na plataforma.",
+    "createTitle": "Criar nova conta",
+    "createDescription": "Novos usuários são criados com e-mail verificado e sua própria conta de trabalho.",
+    "fullNameLabel": "Nome completo",
+    "fullNamePlaceholder": "João Silva",
+    "emailLabel": "Endereço de e-mail",
+    "emailPlaceholder": "usuario@empresa.com",
+    "passwordLabel": "Senha temporária",
+    "passwordPlaceholder": "Mínimo de 8 caracteres",
+    "submit": "Criar usuário",
+    "creating": "Criando usuário...",
+    "createSuccess": "Conta criada para {email}",
+    "createError": "Falha ao criar usuário",
+    "listTitle": "Usuários registrados",
+    "listDescription": "Contas criadas recentemente nesta instância ({count}).",
+    "refresh": "Atualizar",
+    "loading": "Carregando usuários...",
+    "empty": "Nenhum usuário encontrado.",
+    "colUser": "Usuário",
+    "colEmail": "E-mail",
+    "colRole": "Função",
+    "colCreated": "Criado em",
+    "publisherBadge": "Publisher"
   }
 }
