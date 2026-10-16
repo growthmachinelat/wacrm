@@ -60,19 +60,21 @@ Chatrelo uses the **OKLCH** color space for all design tokens. OKLCH guarantees 
 ### 3.2 Core Brand Tokens Table
 | Token Name | Hex | RGB | OKLCH | Role & Purpose | WCAG Contrast (vs Background) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `--primary` | `#c6f02c` | `198, 240, 44` | `oklch(0.894 0.206 122)` | Primary brand accent, primary CTA buttons, active indicators | **14.2:1** on `#0f1513` (AAA Pass) |
-| `--primary-foreground` | `#0f1513` | `15, 21, 19` | `oklch(0.188 0.010 173)` | Text on primary buttons, badge text on lime surfaces | **14.2:1** on `#c6f02c` (AAA Pass) |
-| `--primary-hover` | `#d4f54e` | `212, 245, 78` | `oklch(0.930 0.180 122)` | Interactive hover state for primary elements | **15.4:1** on `#0f1513` |
-| `--primary-soft` | — | — | `oklch(0.894 0.206 122 / 0.15)` | Subtle 15% tint for sidebar active items, tags, pills | Surface accent |
-| `--primary-soft-2` | — | — | `oklch(0.894 0.206 122 / 0.25)` | 25% tint for selected state hover, focus rings | Interactive hover tint |
-| `--background` | `#0f1513` | `15, 21, 19` | `oklch(0.188 0.010 173)` | App root canvas, deep dark obsidian foundation | Canvas |
-| `--card` | `#151c19` | `21, 28, 25` | `oklch(0.220 0.010 173)` | Elevated surface for cards, dropdowns, panels | Surface level 1 |
-| `--card-2` | `#1b2320` | `27, 35, 32` | `oklch(0.245 0.012 173)` | Secondary surface for list item hovers, tiles, chips | Surface level 2 |
-| `--sidebar` | `#0b100e` | `11, 16, 14` | `oklch(0.160 0.010 173)` | Anchored vertical navigation background | Structural anchor |
-| `--border` | `#232d29` | `35, 45, 41` | `oklch(0.290 0.012 173)` | Subtle structural divider lines and input borders | Structure |
-| `--foreground` | `#fbfbfb` | `251, 251, 251` | `oklch(0.985 0.000 0)` | Primary high-emphasis body and heading text | **15.8:1** on `#0f1513` (AAA Pass) |
-| `--muted-foreground` | `#a3ada8` | `163, 173, 168` | `oklch(0.680 0.015 173)` | Secondary metadata, descriptions, timestamps | **5.2:1** on `#0f1513` (AA Pass) |
-| `--destructive` | `#ef4444` | `239, 68, 68` | `oklch(0.577 0.245 27.325)` | Destructive actions, delete confirmations, error alerts | **4.8:1** on `#0f1513` |
+| `--primary` (Dark) | `#c6f02c` | `198, 240, 44` | `oklch(0.894 0.206 122)` | Primary brand accent in dark mode | **14.2:1** on `#0f1513` (AAA Pass) |
+| `--primary-foreground` (Dark) | `#0f1513` | `15, 21, 19` | `oklch(0.188 0.010 173)` | Dark obsidian text on lime buttons | **14.2:1** on `#c6f02c` (AAA Pass) |
+| `--primary` (Light) | `#15803d` | `21, 128, 61` | `oklch(0.460 0.150 142)` | High-contrast emerald green for light mode | **5.6:1** on `#ffffff` (AA Pass) |
+| `--primary-foreground` (Light) | `#ffffff` | `255, 255, 255` | `oklch(0.990 0.000 0)` | Crisp white text on primary buttons in light mode | **5.6:1** on emerald (AA Pass) |
+| `--primary-hover` (Dark) | `#d4f54e` | `212, 245, 78` | `oklch(0.930 0.180 122)` | Hover state for dark mode primary elements | **15.4:1** on `#0f1513` |
+| `--primary-hover` (Light) | `#166534` | `22, 101, 52` | `oklch(0.400 0.150 142)` | Hover state for light mode primary elements | **7.2:1** on `#ffffff` |
+| `--primary-soft` | — | — | `12-15% tint` | Subtle tint for sidebar active items, tags, pills | Surface accent |
+| `--background` (Dark) | `#0f1513` | `15, 21, 19` | `oklch(0.188 0.010 173)` | App root canvas, deep dark obsidian foundation | Canvas |
+| `--background` (Light) | `#fafcfb` | `250, 252, 251`| `oklch(0.990 0.002 173)` | Crisp, clean light canvas | Light canvas |
+| `--card` (Dark) | `#151c19` | `21, 28, 25` | `oklch(0.220 0.010 173)` | Elevated surface for cards, dropdowns, panels | Surface level 1 |
+| `--card` (Light) | `#ffffff` | `255, 255, 255` | `oklch(1 0 0)` | Clean white card surface | Light surface |
+| `--sidebar` (Dark) | `#0b100e` | `11, 16, 14` | `oklch(0.160 0.010 173)` | Anchored vertical navigation background | Structural anchor |
+| `--sidebar` (Light) | `#f5f8f6` | `245, 248, 246` | `oklch(0.985 0.002 173)` | Soft neutral vertical navigation | Light anchor |
+| `--border` | `#232d29` | `35, 45, 41` | `oklch(0.290 0.012 173)` | Structural divider lines (Dark: 0.29, Light: 0.922) | Structure |
+| `--foreground` | `#fbfbfb` | `251, 251, 251` | `oklch(0.985 0.000 0)` | Primary high-emphasis body text (Dark: 0.985, Light: 0.21) | High Contrast |
 
 ---
 
@@ -82,9 +84,9 @@ Chatrelo uses the **OKLCH** color space for all design tokens. OKLCH guarantees 
 The Chatrelo theme engine is split into two independent dimensions:
 1. **Mode Dimension (`data-mode`)**:
    - `dark` (Default): Obsidian surfaces calibrated around hue `173`.
-   - `light`: Clean, light canvas with crisp borders and soft contrast.
+   - `light`: Clean, light canvas with crisp borders and calibrated high-contrast emerald green controls (`oklch(0.46 0.15 142)`), eliminating eye-strain and washed-out text.
 2. **Accent Theme Dimension (`data-theme`)**:
-   - `chatrelo` (Default): Electric Neon Lime (`#c6f02c`).
+   - `chatrelo` (Default): Electric Neon Lime (`#c6f02c`) in Dark Mode / Deep Chatrelo Emerald in Light Mode.
    - `violet`: Hostinger-inspired violet (`oklch(0.526 0.247 293)`).
    - `emerald`: Growth green (`oklch(0.62 0.16 162)`).
    - `cobalt`: SaaS blue (`oklch(0.585 0.2 254)`).

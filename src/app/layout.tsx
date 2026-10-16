@@ -76,10 +76,21 @@ const THEME_BOOT_SCRIPT = `
     var MODE_DEFAULT = ${JSON.stringify(DEFAULT_MODE)};
     var MODES = ${JSON.stringify(MODES)};
     var savedMode = localStorage.getItem(MODE_KEY);
-    d.dataset.mode = MODES.indexOf(savedMode) !== -1 ? savedMode : MODE_DEFAULT;
+    var activeMode = MODES.indexOf(savedMode) !== -1 ? savedMode : MODE_DEFAULT;
+    d.dataset.mode = activeMode;
+    if (activeMode === "dark") {
+      d.classList.add("dark");
+    } else {
+      d.classList.remove("dark");
+    }
   } catch (_e) {
     d.dataset.theme = ${JSON.stringify(DEFAULT_THEME)};
     d.dataset.mode = ${JSON.stringify(DEFAULT_MODE)};
+    if (${JSON.stringify(DEFAULT_MODE)} === "dark") {
+      d.classList.add("dark");
+    } else {
+      d.classList.remove("dark");
+    }
   }
 })();
 `;
@@ -97,7 +108,7 @@ export default async function RootLayout({
       lang={locale}
       data-theme={DEFAULT_THEME}
       data-mode={DEFAULT_MODE}
-      className={`${inter.variable} h-full antialiased`}
+      className={`${inter.variable} ${DEFAULT_MODE === "dark" ? "dark" : ""} h-full antialiased`}
       // The `theme-boot` script below rewrites `data-theme` and
       // `data-mode` on <html> from localStorage before React hydrates,
       // so for any non-default choice the client DOM intentionally

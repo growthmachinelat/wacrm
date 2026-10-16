@@ -103,15 +103,6 @@ export default function ForgotPasswordPage() {
       </div>
       <Card className="w-full max-w-md border-border bg-card">
         <CardHeader className="items-center text-center">
-          <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-[#0f1513] border border-border/40 p-2 overflow-hidden shadow-xs">
-            <Image
-              src="/logo-mark.png"
-              alt="Chatrelo"
-              width={28}
-              height={28}
-              className="h-7 w-7 object-contain"
-            />
-          </div>
           <CardTitle className="text-xl text-foreground">{t("title")}</CardTitle>
           <CardDescription className="text-muted-foreground">
             {t("desc")}

@@ -2,7 +2,7 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark (&:is(.dark *, [data-mode="dark"] *, [data-mode="dark"]));
 
 @theme inline {
   --color-background: var(--background);
@@ -159,6 +159,21 @@ html[data-theme="chatrelo"] {
   --sidebar-primary: oklch(0.894 0.206 122);
   --sidebar-primary-foreground: oklch(0.188 0.010 173);
   --sidebar-ring: oklch(0.894 0.206 122);
+}
+
+/* Light mode calibration for Chatrelo: High-contrast emerald green for readable text and controls */
+html[data-mode="light"][data-theme="chatrelo"],
+html[data-mode="light"]:not([data-theme="violet"]):not([data-theme="emerald"]):not([data-theme="cobalt"]):not([data-theme="amber"]):not([data-theme="rose"]) {
+  --primary: oklch(0.46 0.15 142);
+  --primary-foreground: oklch(0.99 0 0);
+  --primary-hover: oklch(0.40 0.15 142);
+  --primary-soft: oklch(0.46 0.15 142 / 0.12);
+  --primary-soft-2: oklch(0.46 0.15 142 / 0.20);
+  --ring: oklch(0.46 0.15 142);
+  --chart-1: oklch(0.46 0.15 142);
+  --sidebar-primary: oklch(0.46 0.15 142);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-ring: oklch(0.46 0.15 142);
 }
 
 html[data-theme="violet"] {
